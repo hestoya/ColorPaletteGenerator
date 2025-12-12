@@ -1,0 +1,8 @@
+﻿<div class="tile" style="@Style"></div>
+
+@code {
+    [Parameter]
+    public required string Color { get; set; }
+
+    public string Style => $"background-color: #{Color};";
+}

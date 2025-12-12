@@ -1,0 +1,36 @@
+﻿<h3>Palette</h3>
+
+<button class="btn btn-primary" @onclick="GeneratePalette">Generate</button>
+
+<div style="display:flex; gap: 20px; margin-top: 20px;">
+    <Tile Color="@Color1" />
+    <Tile Color="@Color2" />
+    <Tile Color="@Color3" />
+    <Tile Color="@Color4" />
+</div>
+
+@code {
+    public required string Color1 { get; set; }
+    public required string Color2 { get; set; }
+    public required string Color3 { get; set; }
+    public required string Color4 { get; set; }
+
+    public void GeneratePalette()
+    {
+        Color1 = GenerateColor();
+        Color2 = GenerateColor();
+        Color3 = GenerateColor();
+        Color4 = GenerateColor();
+    }
+
+    public string GenerateColor()
+    {
+        var random = new Random();
+        
+        var r = random.Next(0, 256);
+        var g = random.Next(0, 256);
+        var b = random.Next(0, 256);
+
+        return $"{r:X2}{g:X2}{b:X2}";
+    }
+}
