@@ -10,7 +10,7 @@ The app is based on a tutorial I followed [here](https://www.youtube.com/watch?v
 
 ## 🔧 Current Functionality
 
-- **Random Color Generation**: Generates a palette of 4 random RGB colors.
+- **Random Color Generation**: Generates a palette of 8 random RGB colors.
 - **RGB to HEX Conversion**: Converts the generated RGB colors to their HEX equivalents.
 - **Basic UI**: Displays the generated colors with their respective RGB and HEX codes.
 - **Palette Regeneration**: Regenerate a new random palette on click.
@@ -21,19 +21,16 @@ The app is based on a tutorial I followed [here](https://www.youtube.com/watch?v
 
 1. **Lock/Unlock Colors**: Ability to lock specific colors so they won't change when the palette is regenerated.
 2. **Color Count Adjustment**: Let users adjust the number of colors in the palette (e.g., 3–8 colors).
-3. **Copy to Clipboard**: Add a button to easily copy the color codes (RGB/HEX) to the clipboard.
-4. **Save Palettes Locally**: Save generated color palettes in the browser’s local storage for future reference.
-5. **Color Picker Tool**: Allow users to adjust one or more colors manually with a color picker.
-6. **Color Harmonies**: Automatically generate color harmonies like complementary, analogous, triadic, etc.
-7. **Accessibility Checker**: Check if the colors have enough contrast for text legibility (WCAG standards).
-8. **Color Visualization**: Display the generated colors in various UI elements (buttons, background, etc.).
-9. **Export Options**: Enable users to export palettes in various formats like PNG, CSS variables, SCSS, or JSON.
-10. **Color Naming**: Automatically assign names to the colors in the palette (e.g., "Sea Green", "Midnight Blue").
-11. **Dark Mode Toggle**: Allow users to switch between light and dark themes.
-12. **Shareable URLs**: Generate and share a URL that encodes the current color palette.
+3. **Save Palettes Locally**: Save generated color palettes in the browser’s local storage for future reference.
+4. **Color Picker Tool**: Allow users to adjust one or more colors manually with a color picker.
+5. **Color Harmonies**: Automatically generate color harmonies like complementary, analogous, triadic, etc.
+6. **Accessibility Checker**: Check if the colors have enough contrast for text legibility (WCAG standards).
+7. **Color Visualization**: Display the generated colors in various UI elements (buttons, background, etc.).
+8. **Export Options**: Enable users to export palettes in various formats like PNG, CSS variables, SCSS, or JSON.
+9. **Color Naming**: Automatically assign names to the colors in the palette (e.g., "Sea Green", "Midnight Blue").
+10. **Shareable URLs**: Generate and share a URL that encodes the current color palette.
 
 ---
-
 
 ## 🛠️ Clone and Run the App
 
