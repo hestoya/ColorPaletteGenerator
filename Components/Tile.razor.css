@@ -1,4 +1,5 @@
 ﻿.tile {
-    width: 250px;
+    width: 100%;
     height: 250px;
+    cursor: pointer;
 }
