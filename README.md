@@ -1,4 +1,4 @@
-# Color Palette Generator (Blazor Web App)
+# Color Palette Generator
 
 ## 📜 Overview
 
