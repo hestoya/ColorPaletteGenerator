@@ -1,8 +1,30 @@
-﻿<div class="tile" style="@Style"></div>
+﻿@if (!string.IsNullOrEmpty(Color) && HexValue is not null)
+{
+    <div class="tile-container card shadow-sm w-100">
+        <div class="card-body text-center align-self-center w-100">
+            <div class="tile" style="@Style" @onclick="CopyColorToClipboard"></div>
+            <div class="d-flex justify-content-center">
+                <p class="mt-2 mb-0 pe-2">@HexValue</p>
+                <i class="bi bi-copy mt-2 mb-0" @onclick="CopyColorToClipboard"></i>
+            </div>
+        </div>
+    </div>
+}
+
 
 @code {
     [Parameter]
     public required string Color { get; set; }
 
+    [Parameter]
+    public required string HexValue { get; set; }
+
+    [Inject] IJSRuntime JS { get; set; } = default!;
+
     public string Style => $"background-color: #{Color};";
+
+    private async Task CopyColorToClipboard()
+    {
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", HexValue);
+    }
 }
