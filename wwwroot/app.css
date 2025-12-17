@@ -1,14 +1,3 @@
-/*Color Palette Generator*/
-
-* {
-    background-color: #00002E;
-}
-
-html, body {
-    background-color: #00002E !important;
-}
-
-
 /*Blazor App Default Styles*/
 
 h1:focus {
