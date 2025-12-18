@@ -19,7 +19,7 @@ The app is based on a tutorial I followed [here](https://www.youtube.com/watch?v
 
 ## 🖥️ App Preview
 
-![App Preview](ColorPaletteGenerator\wwwroot\Preview.png)
+![App Preview](docs/images/homepage.png)
 
 ---
 
