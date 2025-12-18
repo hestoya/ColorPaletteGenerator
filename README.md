@@ -17,6 +17,12 @@ The app is based on a tutorial I followed [here](https://www.youtube.com/watch?v
 
 ---
 
+## 🖥️ App Preview
+
+![App Preview](ColorPaletteGenerator\wwwroot\Preview.png)
+
+---
+
 ## 🚀 Features to Be Added
 
 1. **Lock/Unlock Colors**: Ability to lock specific colors so they won't change when the palette is regenerated.
