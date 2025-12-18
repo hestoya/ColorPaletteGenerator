@@ -2,11 +2,59 @@
 {
     <div class="tile-container card shadow-sm w-100">
         <div class="card-body text-center align-self-center w-100">
-            <div class="tile" style="@Style" @onclick="CopyColorToClipboard"></div>
-            <div class="d-flex justify-content-center">
-                <p class="mt-2 mb-0 pe-2">@HexValue</p>
-                <i class="bi bi-copy mt-2 mb-0" @onclick="CopyColorToClipboard"></i>
+
+            <div class="tile" style="@Style">
+
+                <div class="overlay">
+                    <button class="btn" @onclick="CopyColorToClipboard">@tooltipText</button>
+                </div>
+
             </div>
+
+            <div class="d-flex justify-content-center">
+
+                <p class="mt-2 mb-0 pe-2">@HexValue</p>
+
+                <span class="mt-2 mb-0 tooltip-wrapper align-self-center"
+                      @onmouseenter="@(() => tooltipText = "Copy")"
+                      @onclick="CopyColorToClipboard">
+
+                    <i class="bi @(tooltipText == "Copied!" ? "bi-clipboard-check-fill" : "bi-clipboard")"></i>
+
+                    <span class="custom-tooltip">@tooltipText</span>
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+}
+
+else
+{
+    <div class="tile-container card shadow-sm w-100">
+        <div class="card-body text-center align-self-center w-100">
+
+            <div class="tile" style="background-color: #000000;">
+
+                <div class="overlay">
+                    <button class="btn">Default</button>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-center">
+
+                <p class="mt-2 mb-0 pe-2">#000000</p>
+
+                <span class="mt-2 mb-0 tooltip-wrapper align-self-center">
+
+                    <i class="bi bi-clipboard"></i>
+
+                </span>
+
+            </div>
+
         </div>
     </div>
 }
@@ -21,10 +69,20 @@
 
     [Inject] IJSRuntime JS { get; set; } = default!;
 
+    private string tooltipText = "Copy";
+
     public string Style => $"background-color: #{Color};";
 
     private async Task CopyColorToClipboard()
     {
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", HexValue);
+
+        tooltipText = "Copied!";
+        StateHasChanged();
+
+        await Task.Delay(1200);
+
+        tooltipText = "Copy";
+        StateHasChanged();
     }
 }

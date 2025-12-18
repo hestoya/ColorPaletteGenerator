@@ -16,3 +16,36 @@
         right: 0.75rem;
         top: 0.5rem;
     }
+
+.ellipse-overlay {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    max-width: 400px;
+    max-height: 400px;
+    background: radial-gradient( ellipse at center, rgba(167, 242, 255, 0.6), rgba(167, 242, 255, 0.6), transparent 60% );
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.top-right {
+    top: -2vw;
+    right: -8vw;
+}
+
+.top-left {
+    top: -2vw;
+    right: 92vw;
+}
+
+.bottom-right {
+    top: 18vw;
+    right: -8vw;
+}
+
+.bottom-left {
+    top: 18vw;
+    right: 92vw;
+}
