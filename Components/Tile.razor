@@ -6,7 +6,12 @@
             <div class="tile" style="@Style">
 
                 <div class="overlay">
-                    <button class="btn" @onclick="CopyColorToClipboard">@tooltipText</button>
+                    <div class="d-flex align-items-center">
+                        <button class="btn" @onclick="CopyColorToClipboard">
+                            <i class="bi @(tooltipText == "Copied!" ? "bi-check" : "bi-copy") pe-1"></i>
+                            @tooltipText
+                        </button>
+                    </div>
                 </div>
 
             </div>
