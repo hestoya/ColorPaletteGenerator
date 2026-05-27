@@ -63,31 +63,3 @@ else
         </div>
     </div>
 }
-
-
-@code {
-    [Parameter]
-    public required string Color { get; set; }
-
-    [Parameter]
-    public required string HexValue { get; set; }
-
-    [Inject] IJSRuntime JS { get; set; } = default!;
-
-    private string tooltipText = "Copy";
-
-    public string Style => $"background-color: #{Color};";
-
-    private async Task CopyColorToClipboard()
-    {
-        await JS.InvokeVoidAsync("navigator.clipboard.writeText", HexValue);
-
-        tooltipText = "Copied!";
-        StateHasChanged();
-
-        await Task.Delay(1200);
-
-        tooltipText = "Copy";
-        StateHasChanged();
-    }
-}
